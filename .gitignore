@@ -38,10 +38,16 @@ frontend/dist/
 .DS_Store
 Thumbs.db
 
-# Debian packages
+# Debian packages and build artifacts
 *.deb
 *.buildinfo
 *.changes
+debian/.debhelper/
+debian/tmp/
+debian/files
+debian/debhelper-build-stamp
+debian/*.substvars
+debian/cockpit-authelia-users/
 
 # Local configuration
 *.local.md
