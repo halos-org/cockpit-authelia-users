@@ -44,3 +44,12 @@ export interface ApiError {
   message: string;
   details?: Record<string, unknown>;
 }
+
+/**
+ * Global type extensions for Cockpit environment.
+ */
+declare global {
+  interface Window {
+    debugging?: string | string[];
+  }
+}
