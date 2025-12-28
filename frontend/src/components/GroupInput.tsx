@@ -55,6 +55,7 @@ export function GroupInput({
   }, [inputValue, suggestions.length]);
 
   const addGroup = (group: string) => {
+    // Normalize to lowercase for Authelia compatibility - group names are case-insensitive
     const trimmedGroup = group.trim().toLowerCase();
     if (trimmedGroup && !value.includes(trimmedGroup)) {
       onChange([...value, trimmedGroup]);

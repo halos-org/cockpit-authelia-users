@@ -20,12 +20,12 @@ export interface FormErrors {
 export function validateUserForm(form: FormState, mode: "create" | "edit"): FormErrors {
   const errors: FormErrors = {};
 
-  // user_id: required on create, alphanumeric + underscore/hyphen, 3-64 chars
+  // user_id: required on create, alphanumeric + underscore/hyphen, 1-64 chars
   if (mode === "create") {
     if (!form.user_id) {
       errors.user_id = "Username is required";
-    } else if (!/^[a-zA-Z0-9_-]{3,64}$/.test(form.user_id)) {
-      errors.user_id = "Username must be 3-64 characters (letters, numbers, underscore, hyphen)";
+    } else if (!/^[a-zA-Z0-9_-]{1,64}$/.test(form.user_id)) {
+      errors.user_id = "Username must be 1-64 characters (letters, numbers, underscore, hyphen)";
     }
   }
 
@@ -43,11 +43,9 @@ export function validateUserForm(form: FormState, mode: "create" | "edit"): Form
     errors.email = "Invalid email format";
   }
 
-  // password: required on create, min 8 chars if provided
+  // password: required on create
   if (mode === "create" && !form.password) {
     errors.password = "Password is required";
-  } else if (form.password && form.password.length < 8) {
-    errors.password = "Password must be at least 8 characters";
   }
 
   // confirmPassword: must match if password provided

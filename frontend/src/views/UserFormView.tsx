@@ -121,6 +121,9 @@ export function UserFormView({ mode, userId, onSave, onCancel }: UserFormViewPro
           groups: form.groups,
         });
       } else {
+        if (!userId) {
+          throw new Error("userId is required for edit mode");
+        }
         // Only include password if provided
         const updateData: UserInput = {
           displayname: form.displayname,
@@ -131,7 +134,7 @@ export function UserFormView({ mode, userId, onSave, onCancel }: UserFormViewPro
         if (form.password) {
           updateData.password = form.password;
         }
-        await updateUser(userId!, updateData);
+        await updateUser(userId, updateData);
       }
       onSave();
     } catch (err) {
@@ -210,7 +213,7 @@ export function UserFormView({ mode, userId, onSave, onCancel }: UserFormViewPro
             <FormHelperText>
               <HelperText>
                 <HelperTextItem>
-                  3-64 characters, letters, numbers, underscore, or hyphen
+                  1-64 characters, letters, numbers, underscore, or hyphen
                 </HelperTextItem>
               </HelperText>
             </FormHelperText>
