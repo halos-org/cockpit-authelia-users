@@ -4,13 +4,13 @@ from typing import Any
 
 from ..utils.database import UserDatabase
 from ..utils.errors import UserNotFoundError
+from ..utils.logging import log_operation
+from ..utils.password import hash_password
 from ..utils.validators import (
-    validate_email,
     validate_displayname,
+    validate_email,
     validate_groups,
 )
-from ..utils.password import hash_password
-from ..utils.logging import log_operation
 
 
 def execute(user_id: str, data: dict[str, Any]) -> dict[str, Any]:

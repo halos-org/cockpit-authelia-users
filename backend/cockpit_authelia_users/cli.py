@@ -56,7 +56,7 @@ def main() -> None:
 def dispatch_command(args: argparse.Namespace) -> dict | list:
     """Dispatch to the appropriate command handler."""
     # Import here to avoid circular imports
-    from .commands import list_users, get_user, create_user, update_user, delete_user, list_groups
+    from .commands import create_user, delete_user, get_user, list_groups, list_users, update_user
 
     match args.command:
         case "list-users":

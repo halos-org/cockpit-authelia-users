@@ -2,10 +2,10 @@
 
 from cockpit_authelia_users.utils.errors import (
     AutheliaUsersError,
-    UserNotFoundError,
-    UserExistsError,
-    ValidationError,
     DatabaseError,
+    UserExistsError,
+    UserNotFoundError,
+    ValidationError,
 )
 
 

@@ -2,11 +2,11 @@
 
 from typing import Any
 
-from ..utils.database import UserDatabase, User
+from ..utils.database import User, UserDatabase
 from ..utils.errors import UserExistsError
-from ..utils.validators import validate_user_data
-from ..utils.password import hash_password
 from ..utils.logging import log_operation
+from ..utils.password import hash_password
+from ..utils.validators import validate_user_data
 
 
 def execute(data: dict[str, Any]) -> dict[str, Any]:

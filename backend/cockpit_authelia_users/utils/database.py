@@ -4,12 +4,12 @@ Handles reading and writing the Authelia users_database.yml file
 with proper file locking to prevent concurrent modification issues.
 """
 
+import fcntl
+import os
+import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
-import fcntl
-import tempfile
-import os
 
 import yaml
 
@@ -110,7 +110,7 @@ class UserDatabase:
             return db
 
         try:
-            with open(path, "r") as f:
+            with open(path) as f:
                 # Acquire shared lock for reading
                 fcntl.flock(f.fileno(), fcntl.LOCK_SH)
                 try:

@@ -1,10 +1,11 @@
 """Tests for database operations module."""
 
-import pytest
 from pathlib import Path
+
+import pytest
 import yaml
 
-from cockpit_authelia_users.utils.database import UserDatabase, User
+from cockpit_authelia_users.utils.database import User, UserDatabase
 from cockpit_authelia_users.utils.errors import DatabaseError
 
 

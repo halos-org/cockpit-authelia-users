@@ -7,7 +7,7 @@ Uses Authelia-compatible parameters:
 """
 
 from argon2 import PasswordHasher, Type
-from argon2.exceptions import VerifyMismatchError, InvalidHashError
+from argon2.exceptions import InvalidHashError, VerifyMismatchError
 
 # Authelia-compatible Argon2id parameters
 # See: https://www.authelia.com/configuration/first-factor/file/
