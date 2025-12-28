@@ -8,11 +8,12 @@ echo "Building Debian package in Debian trixie container..."
 
 # Build the package inside debtools container
 # dpkg-buildpackage writes to .. by convention, so we move files back after
+# Note: The || true is isolated to mv only (some files may not exist) - build failures will still fail
 docker run --rm \
   -v "$(pwd):/workspace" \
   -w /workspace \
   debtools:latest \
-  bash -c "dpkg-buildpackage -b -uc -us && mv ../*.deb ../*.buildinfo ../*.changes ./ 2>/dev/null || true"
+  bash -c "dpkg-buildpackage -b -uc -us && { mv ../*.deb ../*.buildinfo ../*.changes ./ 2>/dev/null || true; }"
 
 # List generated packages
 echo "Generated packages:"
