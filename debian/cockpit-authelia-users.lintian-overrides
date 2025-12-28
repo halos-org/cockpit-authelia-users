@@ -1,0 +1,15 @@
+# PatternFly fonts bundled with frontend build
+# These are required for the Cockpit plugin UI and cannot be system fonts
+cockpit-authelia-users: font-in-non-font-package [usr/share/cockpit/authelia-users/*.woff2]
+cockpit-authelia-users: font-outside-font-dir [usr/share/cockpit/authelia-users/*.woff2]
+
+# Cockpit plugin index.html is not documentation, it's the application entry point
+cockpit-authelia-users: package-contains-documentation-outside-usr-share-doc [usr/share/cockpit/authelia-users/index.html]
+
+# This package is for the HaLOS distribution, not Debian proper
+# No ITP bug was filed as this is not intended for Debian archives
+cockpit-authelia-users: initial-upload-closes-no-bugs
+
+# The bridge CLI is only called by Cockpit, not directly by users
+# Man page not required for internal tools
+cockpit-authelia-users: no-manual-page [usr/bin/cockpit-authelia-users-bridge]
