@@ -161,6 +161,12 @@ class UserDatabase:
 
         Uses a temporary file and rename to ensure atomic writes.
 
+        Note on concurrency: The file lock is held on the temporary file during
+        write, not the target file. This means concurrent saves could race on
+        os.replace(). Since os.replace() is atomic on POSIX, this is safe -
+        the last writer wins and no partial writes occur. This is acceptable
+        for this use case where concurrent writes are rare.
+
         Args:
             path: Path to save to. Defaults to the standard location.
 

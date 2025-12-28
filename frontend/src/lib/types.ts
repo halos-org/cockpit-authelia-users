@@ -11,7 +11,7 @@ export interface User {
 }
 
 /**
- * User data for create/update operations.
+ * User data for update operations.
  * Password is plaintext (hashed by backend).
  */
 export interface UserInput {
@@ -20,6 +20,15 @@ export interface UserInput {
   password?: string;
   disabled?: boolean;
   groups?: string[];
+}
+
+/**
+ * User data for create operations.
+ * Includes user_id which is required for new users.
+ */
+export interface CreateUserInput extends UserInput {
+  user_id: string;
+  password: string; // Required for creation
 }
 
 /**

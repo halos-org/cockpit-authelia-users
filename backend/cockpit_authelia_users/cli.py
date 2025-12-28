@@ -6,6 +6,7 @@ import sys
 from typing import Any
 
 from .utils.errors import AutheliaUsersError
+from .utils.logging import log_operation
 
 
 def main() -> None:
@@ -46,6 +47,7 @@ def main() -> None:
         print(json.dumps(e.to_dict()), file=sys.stderr)
         sys.exit(1)
     except Exception as e:
+        log_operation("internal_error", details=str(e))
         error = {
             "code": "INTERNAL_ERROR",
             "message": str(e),

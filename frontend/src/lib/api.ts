@@ -3,7 +3,7 @@
  * All operations require superuser privileges.
  */
 
-import type { User, UserInput, ApiError } from "./types";
+import type { User, UserInput, CreateUserInput, ApiError } from "./types";
 
 declare const cockpit: {
   spawn: (
@@ -72,7 +72,7 @@ export async function getUser(userId: string): Promise<User> {
 /**
  * Create a new user.
  */
-export async function createUser(data: UserInput & { user_id: string }): Promise<User> {
+export async function createUser(data: CreateUserInput): Promise<User> {
   return execute<User>(["create-user"], JSON.stringify(data));
 }
 
