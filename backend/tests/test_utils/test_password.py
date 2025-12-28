@@ -1,7 +1,5 @@
 """Tests for password hashing module."""
 
-import pytest
-
 from cockpit_authelia_users.utils.password import hash_password, verify_password
 
 

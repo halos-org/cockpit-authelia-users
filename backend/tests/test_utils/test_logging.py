@@ -1,9 +1,8 @@
 """Tests for logging module."""
 
-import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
 
-from cockpit_authelia_users.utils.logging import log_operation, LOG_IDENTIFIER
+from cockpit_authelia_users.utils.logging import LOG_IDENTIFIER, log_operation
 
 
 class TestLogOperation:

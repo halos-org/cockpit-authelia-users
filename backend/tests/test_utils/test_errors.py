@@ -1,7 +1,5 @@
 """Tests for error handling module."""
 
-import pytest
-
 from cockpit_authelia_users.utils.errors import (
     AutheliaUsersError,
     UserNotFoundError,

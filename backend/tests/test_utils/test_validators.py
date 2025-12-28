@@ -2,14 +2,14 @@
 
 import pytest
 
+from cockpit_authelia_users.utils.errors import ValidationError
 from cockpit_authelia_users.utils.validators import (
-    validate_user_id,
-    validate_email,
     validate_displayname,
+    validate_email,
     validate_groups,
     validate_user_data,
+    validate_user_id,
 )
-from cockpit_authelia_users.utils.errors import ValidationError
 
 
 class TestValidateUserId:
