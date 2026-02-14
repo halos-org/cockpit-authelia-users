@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: cockpit-authelia-users
 Upstream-Contact: Hat Labs <info@hatlabs.fi>
-Source: https://github.com/hatlabs/cockpit-authelia-users
+Source: https://github.com/halos-org/cockpit-authelia-users
 
 Files: *
 Copyright: 2024 Hat Labs

@@ -6,7 +6,7 @@ This repository should be used as part of the halos-distro workspace for AI-assi
 
 ```bash
 # Clone workspace and all repos
-git clone https://github.com/hatlabs/halos-distro.git
+git clone https://github.com/halos-org/halos-distro.git
 cd halos-distro
 ./run repos:clone
 ```
@@ -197,4 +197,4 @@ Follow conventional commits:
 - [Authelia Users File](https://www.authelia.com/configuration/first-factor/file/)
 - [PatternFly React](https://www.patternfly.org/get-started/develop/)
 
-Part of the [HaLOS](https://github.com/hatlabs/halos-distro) distribution.
+Part of the [HaLOS](https://github.com/halos-org/halos-distro) distribution.
